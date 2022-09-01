@@ -6,7 +6,7 @@
 
 in a msys2 terminal, install git and the dependencies:
 ```
-pacman -S git mingw-w64-x86_64-pkgconf mingw-w64-x86_64-gcc mingw-w64-x86_64-desktop-file-utils mingw-w64-x86_64-appstream-glib mingw-w64-x86_64-gtk4 mingw-w64-x86_64-libadwaita mingw-w64-x86_64-poppler mingw-w64-x86_64-poppler-data
+pacman -S git mingw-w64-x86_64-pkgconf mingw-w64-x86_64-gcc mingw-w64-cross-binutils mingw-w64-x86_64-meson mingw-w64-x86_64-desktop-file-utils mingw-w64-x86_64-appstream-glib mingw-w64-x86_64-gtk4 mingw-w64-x86_64-libadwaita mingw-w64-x86_64-poppler mingw-w64-x86_64-poppler-data
 ```
 
 Add rust binary path to msys2's bash path: in `~/.bashrc`
@@ -26,7 +26,7 @@ git clone https://github.com/flxzt/rnote
 git submodule update --init --recursive
 ```
 
-Rnote can be built with meson inside a **mingw64 shell**:
+Rnote can be built with meson in a **mingw64** terminal:
 
 setup meson
 ```
@@ -44,3 +44,6 @@ meson install -C _mesonbuild
 ```
 
 the installed binary can now be executed from binary path `C:/gnome/bin/rnote.exe`.
+
+# Create an installer
+to create an installer, run the `rnote_inno.iss` script with Inno Setup after building.

@@ -5,6 +5,12 @@ edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[build-dependencies]
+anyhow = "1.0"
+
+[target.'cfg(windows)'.build-dependencies]
+winres = "0.1"
+
 [dependencies]
 rnote-compose = {path = "../rnote-compose", version="0.1"}
 rnote-engine = {path = "../rnote-engine", version="0.1"}

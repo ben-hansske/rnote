@@ -7,6 +7,7 @@
 /.flatpak-builder
 /flatpak-repo
 /flatpak-app
+/_inno
 /target
 /vendor
 /.editorconfig

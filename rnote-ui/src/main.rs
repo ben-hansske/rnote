@@ -1,5 +1,7 @@
 #![warn(missing_debug_implementations)]
 #![allow(clippy::single_match)]
+// Hides console window on windows
+#![windows_subsystem = "windows"]
 
 pub mod config;
 pub mod dialogs;
@@ -41,7 +43,7 @@ extern crate parry2d_f64 as p2d;
 
 use self::config::{GETTEXT_PACKAGE, LOCALEDIR};
 
-fn main() {
+fn main() -> anyhow::Result<()> {
     pretty_env_logger::init();
     log::info!("... env_logger initialized");
 
@@ -51,4 +53,6 @@ fn main() {
 
     let app = app::RnoteApp::new();
     app.run();
+
+    Ok(())
 }
