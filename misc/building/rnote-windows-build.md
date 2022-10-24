@@ -6,7 +6,7 @@
 
 in a msys2 terminal, install git and the dependencies:
 ```
-pacman -S git mingw-w64-x86_64-pkgconf mingw-w64-x86_64-gcc mingw-w64-cross-binutils mingw-w64-x86_64-meson mingw-w64-x86_64-desktop-file-utils mingw-w64-x86_64-appstream-glib mingw-w64-x86_64-gtk4 mingw-w64-x86_64-libadwaita mingw-w64-x86_64-poppler mingw-w64-x86_64-poppler-data
+pacman -S git mingw-w64-x86_64-pkgconf mingw-w64-x86_64-gcc mingw-w64-x86_64-clang mingw-w64-cross-binutils mingw-w64-x86_64-meson mingw-w64-x86_64-desktop-file-utils mingw-w64-x86_64-appstream-glib mingw-w64-x86_64-gtk4 mingw-w64-x86_64-libadwaita mingw-w64-x86_64-poppler mingw-w64-x86_64-poppler-data
 ```
 
 Add rust binary path to msys2's bash path: in `~/.bashrc`
@@ -33,9 +33,9 @@ setup meson
 meson setup --prefix=C:/gnome _mesonbuild
 ```
 
-compile
+compile (with gcc, clang is currently failing)
 ```
-meson compile -C _mesonbuild
+CC=gcc CXX=g++ meson compile -C _mesonbuild
 ```
 
 then install: 
